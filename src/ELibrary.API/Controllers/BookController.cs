@@ -1,9 +1,11 @@
 ﻿using ELibrary.Business.Models.BookModel;
 using ELibrary.Business.Services.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ELibrary.API.Controllers
 {
+    [Authorize]
     public class BookController : ApiController
     {
         private readonly IBookService _bookService;

@@ -39,7 +39,12 @@ namespace ELibrary.Business.Services.Implement
             await _context.SaveChangesAsync();
 
             return ApiResult<CreateUserResponseModel>.Success(
-                new CreateUserResponseModel { Id = user.Id });
+                new CreateUserResponseModel 
+            {
+                Id = user.Id,
+                FullName = user.FullName,
+                Email = user.Email
+            });
         }
 
         public async Task<ApiResult<LoginResponseModel>> LoginAsync(LoginUserModel model)

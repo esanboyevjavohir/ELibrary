@@ -1,9 +1,11 @@
 ﻿using ELibrary.Business.Helpers.GenerateJWT;
 using ELibrary.Business.Services.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ELibrary.API.Controllers
 {
+    [Authorize]
     public class TransactionController : ApiController
     {
         private readonly ITransactionService _transactionService;
