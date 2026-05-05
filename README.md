@@ -61,3 +61,10 @@ ELibrary.Core       - Entities, Interfaces, Enums
 Database__ConnectionString  - PostgreSQL ulanish
 JwtSettings__SecretKey      - JWT maxfiy kalit
 Redis__Configuration        - Redis ulanish
+
+## Postman Collection
+Barcha API testlari uchun `ELibrary.postman_collection.json` faylini Postman ga import qiling:
+1. Postman oching
+2. **Import** bosing
+3. `ELibrary.postman_collection.json` faylini tanlang
+4. Barcha endpointlar tayyor!
