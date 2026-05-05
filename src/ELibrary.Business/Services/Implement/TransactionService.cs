@@ -50,7 +50,7 @@ namespace ELibrary.Business.Services.Implement
                 UserId = userId,
                 BookId = bookId,
                 Type = TransactionType.Purchase,
-                Date = DateTime.UtcNow
+                Date = DateTime.Now
             };
 
             await _context.Transactions.AddAsync(transaction);

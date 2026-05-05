@@ -63,5 +63,14 @@ namespace ELibrary.Business.Services.Implement
                 AccessToken = accessToken
             });
         }
+
+        public async Task<ApiResult<UserResponseModel>> GetProfileAsync(Guid userId)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (user is null)
+                return ApiResult<UserResponseModel>.Failure(["Foydalanuvchi topilmadi"]);
+
+            return ApiResult<UserResponseModel>.Success(_mapper.Map<UserResponseModel>(user));
+        }
     }
 }

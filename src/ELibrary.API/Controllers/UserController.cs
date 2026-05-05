@@ -1,7 +1,9 @@
-﻿using ELibrary.Business.Models.User;
+﻿using ELibrary.Business.Helpers.GenerateJWT;
+using ELibrary.Business.Models.User;
 using ELibrary.Business.Services.Interface;
 using ELibrary.Business.Validators;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ELibrary.API.Controllers
@@ -41,6 +43,17 @@ namespace ELibrary.API.Controllers
             var result = await _userService.LoginAsync(model);
             if (!result.Succedded)
                 return Unauthorized(result.Errors);
+            return Ok(result.Result);
+        }
+
+        [HttpGet("profile")]
+        [Authorize]
+        public async Task<IActionResult> GetProfile()
+        {
+            var userId = Guid.Parse(User.FindFirst(CustomClaimNames.Id)!.Value);
+            var result = await _userService.GetProfileAsync(userId);
+            if (!result.Succedded)
+                return NotFound(result.Errors);
             return Ok(result.Result);
         }
     }

@@ -7,5 +7,6 @@ namespace ELibrary.Business.Services.Interface
     {
         Task<ApiResult<CreateUserResponseModel>> RegisterAsync(CreateUserModel model);
         Task<ApiResult<LoginResponseModel>> LoginAsync(LoginUserModel model);
+        Task<ApiResult<UserResponseModel>> GetProfileAsync(Guid userId);
     }
 }
