@@ -7,6 +7,15 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Sentry
+builder.WebHost.UseSentry(o =>
+{
+    o.Dsn = "https://3a162b8228d90c980258b7679ee2f9f8@o4511341052690432.ingest.us.sentry.io/4511341060030464";
+    o.Debug = false;
+    o.TracesSampleRate = 1.0;
+});
+
+// Serilog
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
 
