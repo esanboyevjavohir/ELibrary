@@ -68,3 +68,10 @@ Barcha API testlari uchun `ELibrary.postman_collection.json` faylini Postman ga 
 2. **Import** bosing
 3. `ELibrary.postman_collection.json` faylini tanlang
 4. Barcha endpointlar tayyor!
+
+## Monitoring
+Sentry orqali xatoliklar kuzatiladi. Har qanday crash yuz berganda avtomatik xabar keladi.
+
+## Live URL
+- **API:** https://elibrary-m167.onrender.com
+- **Swagger:** https://elibrary-m167.onrender.com/swagger
